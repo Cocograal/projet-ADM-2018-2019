@@ -14,7 +14,7 @@ import menu_jeu as mj
 class SameCanvas():
     def __init__(self, window):
         self.canvas = tk.Canvas(window, height=600, width=600,
-                                background="DeepSkyBlue2")
+                                background="cornsilk3")
         self.player1 = j1.Player_1(window, self.canvas)
         self.player2 = j2.Player_2(window, self.canvas)
         obstacles = plan.chart(self.canvas)
@@ -31,10 +31,10 @@ class SameCanvas():
         Voir s'il y a un impacte entre les objets
         """
         self.len_overlap1 = len(self.canvas.
-                               find_overlapping(self.player1.ball1_coords[0] - 5,
-                                                self.player1.ball1_coords[1] - 5,
-                                                self.player1.ball1_coords[2] + 5,
-                                                self.player1.ball1_coords[3] + 5))
+                               find_overlapping(self.player1.ball1_coords[0]-5,
+                                                self.player1.ball1_coords[1]-5,
+                                                self.player1.ball1_coords[2]+5,
+                                                self.player1.ball1_coords[3]+5))
         self.len_overlap2 = len(self.canvas.
                                find_overlapping(self.player2.ball2_coords[0] - 5,
                                                 self.player2.ball2_coords[1] - 5,

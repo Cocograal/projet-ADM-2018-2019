@@ -5,6 +5,7 @@ Lancer le jeu pour arriver sur le menu
 
 import tkinter as tk
 import Jeu_et_collision as jeu
+import tank_combat_rules as tcr
 
 
 class Home():
@@ -15,17 +16,23 @@ class Home():
         # Bouton pour demarrer le jeu
         self.buttonStart = tk.Button(root, text="Démarrer le jeu",
                                      command= lambda: self.startGame(root))
-        self.startWindow = self.menu_canvas.create_window(10, 100, anchor='nw', window=self.buttonStart)
+        self.startWindow = self.menu_canvas.create_window(10, 100, anchor='nw',
+                                                          window=self.buttonStart)
         # Bouton pour arreter le jeu
         self.buttonClose = tk.Button(root, text="Fermer le jeu", command=root.destroy)
         self.closeWindow = self.menu_canvas.create_window(250, 400, window=self.buttonClose)
         # Bouton pour savoir les règles du jeu 
+        self.buttonRules = tk.Button(root, text="informations pour jouer",
+                                     command=lambda: self.gameRules(root))
+        self.rulesWindow = self.menu_canvas.create_window(490, 100, anchor="ne",
+                                                          window=self.buttonRules)
     def startGame(self, root):
         self.menu_canvas.destroy()
         jeu.SameCanvas(root)
 
-    def gameRules():
-        
+    def gameRules(self, root):
+        self.menu_canvas.destroy()
+        tcr.Rules(root)
 
 def startMenu():
     root = tk.Tk()
