@@ -57,8 +57,6 @@ class Player_2():
                              lambda event: self.key_release(window, event))
         self.canvas.pack()
 
-
-    
     def move(self, window, event):
         """
         Fonction qui fais les mouvements
@@ -86,7 +84,6 @@ class Player_2():
                 self.canvas.move(self.ball2, 0, 5)
                 self.canvas.move(self.cannon, 0, 5)
                 self.ball_coords()
-
         self.canvas.update()
         # Le mouvement continu tant que key_release() ne l'arrête pas
         self.continue_movement[event.keysym] = window.after(100, lambda:
@@ -148,5 +145,6 @@ class Player_2():
         self.continue_movement[event.keysym] = window.after(500, lambda:
                                                             self.shoot(window,
                                                                        event))
+
     def ball_coords(self):
         self.ball2_coords = self.canvas.coords(self.ball2)

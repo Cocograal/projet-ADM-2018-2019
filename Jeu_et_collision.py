@@ -7,7 +7,7 @@ import tkinter as tk
 import tkinter.messagebox as tkm
 import joueur_1 as j1
 import joueur_2 as j2
-import Map_1 as map
+import Plan_1 as plan
 import menu_jeu as mj
 
 
@@ -17,7 +17,7 @@ class SameCanvas():
                                 background="DeepSkyBlue2")
         self.player1 = j1.Player_1(window, self.canvas)
         self.player2 = j2.Player_2(window, self.canvas)
-        obstacles = map.chart(self.canvas)
+        obstacles = plan.chart(self.canvas)
         for obstacle in obstacles:
             obstacle
         self.canvas.pack()

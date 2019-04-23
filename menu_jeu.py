@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Mar 12 17:55:53 2019
-
-@author: willi
+Lancer le jeu pour arriver sur le menu
 """
 
 import tkinter as tk
@@ -21,7 +19,7 @@ class Home():
         # Bouton pour arreter le jeu
         self.buttonClose = tk.Button(root, text="Fermer le jeu", command=root.destroy)
         self.closeWindow = self.menu_canvas.create_window(250, 400, window=self.buttonClose)
-
+        # Bouton pour savoir les règles du jeu 
     def startGame(self, root):
         self.menu_canvas.destroy()
         jeu.SameCanvas(root)
