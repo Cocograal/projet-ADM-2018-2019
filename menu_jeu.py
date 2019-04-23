@@ -15,7 +15,8 @@ class Home():
         self.menu_canvas.pack()
         self.menu_canvas.create_image(250, 250, image=img)
         self.button = tk.Button(root, text="Cliquez ici", command=self.lancerJeu)
-        self.button.pack()
+        self.button_window = self.menu_canvas.create_window(10, 100, anchor='nw', window=self.button) 
+
     
     def lancerJeu(self):
         window = tk.Tk()
