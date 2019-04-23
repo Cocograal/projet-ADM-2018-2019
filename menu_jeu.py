@@ -24,6 +24,9 @@ class Home():
         self.menu_canvas.destroy()
         jeu.SameCanvas(root)
 
+    def gameRules():
+        
+
 def startMenu():
     root = tk.Tk()
     img = tk.PhotoImage(file='tank_combat.gif')
