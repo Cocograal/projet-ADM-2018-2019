@@ -10,20 +10,23 @@ import Jeu_et_collision as jeu
 
 
 class Home():
-    def __init__(self, img):
+    def __init__(self, img, root):
         self.menu_canvas = tk.Canvas(root, width=500, height=500)
         self.menu_canvas.pack()
         self.menu_canvas.create_image(250, 250, image=img)
-        self.button = tk.Button(root, text="Cliquez ici", command=self.lancerJeu)
+        self.button = tk.Button(root, text="Démarrer le jeu", command= lambda: self.lancerJeu(root))
         self.button_window = self.menu_canvas.create_window(10, 100, anchor='nw', window=self.button) 
 
-    
-    def lancerJeu(self):
-        window = tk.Tk()
-        jeu.SameCanvas(window)
-        window.mainloop()
-    
-root = tk.Tk()
-img = tk.PhotoImage(file='tank_combat.gif')
-Home(img)
-root.mainloop()
+    def lancerJeu(self, root):
+        self.menu_canvas.destroy()
+        jeu.SameCanvas(root)
+
+def lancer_menu():
+    root = tk.Tk()
+    img = tk.PhotoImage(file='tank_combat.gif')
+    Home(img, root)
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    lancer_menu()

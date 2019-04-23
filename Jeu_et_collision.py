@@ -8,7 +8,8 @@ import tkinter as tk
 import tkinter.messagebox as tkm
 import joueur_1 as j1
 import joueur_2 as j2
-
+import Map_1 as map
+import menu_jeu as mj
 
 class SameCanvas():
     def __init__(self, window):
@@ -16,6 +17,9 @@ class SameCanvas():
                                 background="DeepSkyBlue2")
         self.player1 = j1.Player_1(window, self.canvas)
         self.player2 = j2.Player_2(window, self.canvas)
+        obstacles = map.chart(self.canvas)
+        for obstacle in obstacles:
+            obstacle
         self.canvas.pack()
         # Un bouton pour quitter l'interface
         self.button = tk.Button(window, text="Quitter", command=window.destroy)
@@ -45,7 +49,7 @@ class SameCanvas():
             if answer == True:
                 print("Bonjour")
             elif answer == False:
-                self.stop()
+                self.stop(window)
 
         elif self.len_overlap1 > 2:
             #self.canvas.destroy()
@@ -69,9 +73,11 @@ class SameCanvas():
 
         self.try_impact = window.after(1, lambda: self.impact(window))
 
-    def stop(self):
+    def stop(self, window):
         window.destroy()
- 
+        mj.lancer_menu()
+
+
 def demarrerJeu():
     window = tk.Tk()
     SameCanvas(window)
