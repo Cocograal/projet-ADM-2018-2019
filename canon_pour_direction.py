@@ -11,16 +11,16 @@ def gun(canvas, ball, color):
     ball_two_third = canvas.coords(ball)[0] + 12
     ball_minus_third = canvas.coords(ball)[3] - 6
     ball_thirdy = canvas.coords(ball)[1] - 6
-    canon = canvas.create_rectangle(ball_third,
+    cannon = canvas.create_rectangle(ball_third,
                                     ball_minus_third,
                                     ball_two_third,
                                     ball_thirdy,
                                     fill=color,
                                     outline=color)
-    return canon
+    return cannon
 
 
-def rotation(canvas, ball, canon, index, color):
+def rotation(canvas, ball, cannon, index, color):
     """
     La rotation du canon quand on appuie sur la touche q ou l
     """
@@ -40,12 +40,12 @@ def rotation(canvas, ball, canon, index, color):
     left_cannon = canvas.coords(ball)[0] - 6
     up_cannon = canvas.coords(ball)[1] - 6
     # On détruit l'ancien canon
-    canvas.delete(canon)
+    canvas.delete(cannon)
     # On divise l'index par 4 et on regarde le reste pour savoir
     # la position que doit avoir le canon
     if index % 4 == 3:
         # Vers la droite
-        canon = canvas.create_rectangle(ball_thirdx,
+        cannon = canvas.create_rectangle(ball_thirdx,
                                         ball_thirdy,
                                         right_cannon,
                                         ball_two_thirdy,
@@ -53,7 +53,7 @@ def rotation(canvas, ball, canon, index, color):
                                         outline=color)
     elif index % 4 == 2:
         # Vers le bas
-        canon = canvas.create_rectangle(ball_thirdx,
+        cannon = canvas.create_rectangle(ball_thirdx,
                                         ball_thirdy,
                                         ball_two_thirdx,
                                         down_cannon,
@@ -61,7 +61,7 @@ def rotation(canvas, ball, canon, index, color):
                                         outline=color)
     elif index % 4 == 1:
         # Vers la gauche
-        canon = canvas.create_rectangle(left_cannon,
+        cannon = canvas.create_rectangle(left_cannon,
                                         ball_thirdy,
                                         ball_two_thirdx,
                                         ball_two_thirdy,
@@ -69,11 +69,11 @@ def rotation(canvas, ball, canon, index, color):
                                         outline=color)
     else:
         # Vers le haut
-        canon = canvas.create_rectangle(ball_thirdx,
+        cannon = canvas.create_rectangle(ball_thirdx,
                                         up_cannon,
                                         ball_two_thirdx,
                                         ball_two_thirdy,
                                         fill=color,
                                         outline=color)
 
-    return canon
+    return cannon
