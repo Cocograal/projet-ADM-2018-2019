@@ -67,7 +67,6 @@ class Player_1():
                                                             lambda:
                                                             self.move(window,
                                                                       event))
-        self.
 
     def key_press(self, window, event):
         """
