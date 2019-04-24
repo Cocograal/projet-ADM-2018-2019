@@ -27,6 +27,7 @@ GOAL = "Toucher votre adversaire avec un missile"
 
 def open_rules():
     root = tk.Tk()
+    root.title("Tank Combat")
     Rules(root)
     root.mainloop()
 

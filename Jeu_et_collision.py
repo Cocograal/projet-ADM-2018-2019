@@ -97,6 +97,7 @@ class SameCanvas():
 
 def launchGame():
     window = tk.Tk()
+    window.title("Tank Combat")
     SameCanvas(window)
     window.mainloop()
 

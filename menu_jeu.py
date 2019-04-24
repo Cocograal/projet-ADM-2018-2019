@@ -36,6 +36,7 @@ class Home():
 
 def startMenu():
     root = tk.Tk()
+    root.title("Tank Combat")
     img = tk.PhotoImage(file='tank_combat.gif')
     Home(img, root)
     root.mainloop()
