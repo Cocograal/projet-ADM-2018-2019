@@ -96,6 +96,7 @@ class SameCanvas():
         launchGame()
 
 def launchGame():
+    """Fonction pour lancer le jeu"""
     window = tk.Tk()
     window.title("Tank Combat")
     SameCanvas(window)

@@ -27,14 +27,17 @@ class Home():
         self.rulesWindow = self.menu_canvas.create_window(490, 100, anchor="ne",
                                                           window=self.buttonRules)
     def startGame(self, root):
+        """Fonction qui lance le jeu"""
         self.menu_canvas.destroy()
         jeu.SameCanvas(root)
 
     def gameRules(self, root):
+        """Fonction qui ouvre la fenetre des règles"""
         self.menu_canvas.destroy()
         tcr.Rules(root)
 
 def startMenu():
+    """Fonction pour lancer le programme"""
     root = tk.Tk()
     root.title("Tank Combat")
     img = tk.PhotoImage(file='tank_combat.gif')

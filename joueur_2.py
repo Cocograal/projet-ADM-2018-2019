@@ -105,12 +105,12 @@ class Player_2():
             try:
                 self.clock_final = self.clock_fin - self.clock_depart
             except AttributeError:
-                self.clock_final = 0.5
+                self.clock_final = 0.75
                 self.shoot(window, event)
             else:
                 # Si le joueur a tiré il y a + d'1 sec
                 # il peut retirer
-                if self.clock_final >= 0.5:
+                if self.clock_final >= 0.75:
                     self.shoot(window, event)
         elif event.keysym in ("l"):
             self.cannon = c.rotation(self.canvas, self.ball2, self.cannon,
@@ -132,7 +132,7 @@ class Player_2():
             window.after_cancel(self.continue_movement[event.keysym])
             self.continue_movement[event.keysym] = None
             # Si le tire s'est passé, on met un temps avant de pouvoir retirer
-            if self.clock_final >= 0.5:
+            if self.clock_final >= 0.75:
                 self.clock_depart = time.clock()
 
     def shoot(self, window, event):
@@ -142,7 +142,7 @@ class Player_2():
         m.Missile(self.canvas, self.ball2, window, self.cannon)
         # Si le joueur maintient la touche pour tirer, il y a un temps
         # entre les deux tires
-        self.continue_movement[event.keysym] = window.after(500, lambda:
+        self.continue_movement[event.keysym] = window.after(750, lambda:
                                                             self.shoot(window,
                                                                        event))
 

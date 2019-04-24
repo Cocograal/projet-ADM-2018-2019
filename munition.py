@@ -33,7 +33,7 @@ class Missile():
             self.projectile = self.canvas.create_oval(self.x_coord1[0],
                                                       self.x_coord1[1],
                                                       self.x_coord1[2],
-                                                      self.x_coord1[1] + 6)
+                                                      self.x_coord1[1] - 6)
             
             self.missileMovementUp()
         elif self.canvas.coords(self.cannon)[0] == self.left_cannon:
@@ -45,7 +45,7 @@ class Missile():
             self.missileMovementLeft()
         elif self.canvas.coords(self.cannon)[3] == self.down_cannon:
             self.projectile = self.canvas.create_oval(self.x_coord1[0],
-                                                      self.x_coord1[3] - 6,
+                                                      self.x_coord1[3] + 6,
                                                       self.x_coord1[2],
                                                       self.x_coord1[3])
             self.missileMovementDown()

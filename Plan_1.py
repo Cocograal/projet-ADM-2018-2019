@@ -5,6 +5,7 @@ Created for the ungratful William by my humble self
 """
 
 def chart(canvas):
+    """ Fonction qui met les obstacles sur le jeu"""
     obstacles = []
     obstacles.append(canvas.create_rectangle(120,180,125,460, fill='tan1', outline='tan2')) 
     obstacles.append(canvas.create_rectangle(120,180,125,460, fill='tan1', outline='tan2')) 

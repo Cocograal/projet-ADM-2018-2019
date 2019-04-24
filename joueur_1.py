@@ -84,12 +84,12 @@ class Player_1():
             try:
                 self.clock_final = self.clock_fin - self.clock_depart
             except AttributeError:
-                self.clock_final = 0.5
+                self.clock_final = 0.75
                 self.shoot(window, event)
             else:
                 # Si le joueur a tiré il y a + d'1 sec
                 # il peut retirer
-                if self.clock_final >= 0.5:
+                if self.clock_final >= 0.75:
                     self.shoot(window, event)
         elif event.keysym == "q":
             self.cannon = c.rotation(self.canvas,
@@ -126,7 +126,7 @@ class Player_1():
                                self.cannon)
         # Si le joueur maintient la touche pour tirer, il y a un temps
         # entre les deux tires
-        self.continue_movement[event.keysym] = window.after(500, lambda:
+        self.continue_movement[event.keysym] = window.after(750, lambda:
                                                             self.shoot(window,
                                                                        event))
 
